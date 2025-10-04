@@ -15,8 +15,29 @@
       <h1>Picture This!</h1>
       <h4>My Really Cool Blog Post</h4>
     </div>
-    <img src="images/museum.jpg" alt="placeholder">
 
+    <picture>
+      <!-- Square images for large screens (960px and up) -->
+      <source 
+        media="(min-width: 960px)" 
+        srcset="
+          images/museum-square-960w.jpg 1x, 
+          images/museum-square-1920w.jpg 2x
+        " 
+        type="image/jpeg">
+
+      <!-- Landscape images for smaller screens -->
+      <source 
+        media="(max-width: 959px)" 
+        srcset="
+          images/museum-640w.jpg 1x, 
+          images/museum-1440w.jpg 2x
+        " 
+        type="image/jpeg">
+
+      <!-- Fallback image -->
+      <img src="images/museum-640w.jpg" alt="Museum building">
+    </picture>
   </header>
 </body>
 
